@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <%= link_to "Index", root_path %> | <%= link_to "New", new_kitten_path %>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

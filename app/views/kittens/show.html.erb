@@ -1,0 +1,9 @@
+<h1>Show</h1>
+
+<h2><%= @kitten.name %></h2>
+<h3>Age: <%= @kitten.age %></h3>
+<p>Cuteness rating: <%= @kitten.cuteness %>
+<p>Softness rating: <%= @kitten.softness %></p>
+
+<%= link_to "Edit", edit_kitten_path %> | 
+<%= link_to "Delete", kitten_path(@kitten), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>

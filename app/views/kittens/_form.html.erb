@@ -1,0 +1,41 @@
+<h2>Form</h2>
+
+<%= form_with(model: kitten) do |form| %>
+  <% if kitten.errors.any? %>
+    <div style="color: red">
+      <h2>
+        You made <%= pluralize(kitten.errors.count, "error") %> mistakes!
+      </h2>
+
+      <ul>
+        <% kitten.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div>
+    <%= form.label :name %></br>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div>
+    <%= form.label :age %></br>
+    <%= form.number_field :age, in: 0..50 %>
+  </div>
+  
+  <div>
+    <%= form.label :cuteness %></br>
+    <%= form.number_field :cuteness, in: 1..5 %>
+  </div>
+  
+  <div>
+    <%= form.label :softness %></br>
+    <%= form.number_field :softness, in: 1..5 %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
